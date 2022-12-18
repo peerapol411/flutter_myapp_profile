@@ -377,7 +377,7 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
         Container(
           width: 290,
-          margin: EdgeInsets.only(left: 40, top: 20),
+          margin: EdgeInsets.only(left: 40, top: 20,bottom: 20),
           alignment: Alignment.center,
           child: Text(
             style: TextStyle(fontWeight: FontWeight.w600, fontSize: 18),

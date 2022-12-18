@@ -1,6 +1,6 @@
 # my_profile_app
 
-A new Flutter project.
+A new Flutter project about my profile.
 
 ## Getting Started
 

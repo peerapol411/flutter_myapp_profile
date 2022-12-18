@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, duplicate_ignore
 
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 void main() {
   runApp(const MyApp());
@@ -42,9 +43,8 @@ class _MyHomePageState extends State<MyHomePage> {
   String igImg =
       'https://download.logo.wine/logo/Instagram/Instagram-Logo.wine.png';
   String playGames =
-      'https://i.dlpng.com/static/png/5459272-games-games-icon-circle-png-free-transparent-png-download-pngkey-circle-game-png-820_730_preview.png';
-  String watchSeries =
-      'https://toppng.com/uploads/preview/netflix-logo-png-11593869496jqso5gxgsy.png';
+      'https://i.pinimg.com/736x/90/86/41/9086413a443d6239301d96c45baf1215.jpg';
+  String watchSeries = 'https://pic.clubic.com/v1/images/1714513/raw';
   String listenMusic =
       'https://cdn-icons-png.flaticon.com/512/3844/3844724.png';
   int indexSelected = 0;
@@ -63,7 +63,9 @@ class _MyHomePageState extends State<MyHomePage> {
               ? profile()
               : indexSelected == 0
                   ? workplace()
-                  : Container()),
+                  : indexSelected == 1
+                      ? education()
+                      : tool()),
       bottomNavigationBar: BottomNavigationBar(
         // ignore: prefer_const_literals_to_create_immutables
         items: [
@@ -242,12 +244,12 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
           ),
           Container(
-            margin: EdgeInsets.only(left: 35, bottom: 10),
+            margin: EdgeInsets.only(left: 30, bottom: 10),
             child: Row(
               children: [
                 Image.network(
                   playGames,
-                  height: 40,
+                  height: 35,
                 ),
                 Text('Play games'),
               ],
@@ -259,7 +261,7 @@ class _MyHomePageState extends State<MyHomePage> {
               children: [
                 Image.network(
                   watchSeries,
-                  height: 45,
+                  height: 33,
                 ),
                 Text('Watch movies'),
               ],
@@ -380,6 +382,192 @@ class _MyHomePageState extends State<MyHomePage> {
           child: Text(
             style: TextStyle(fontWeight: FontWeight.w600, fontSize: 18),
             'If you can control the situation, That means you will not get any better.',
+          ),
+        ),
+      ],
+    );
+  }
+
+  education() {
+    String secondarySchool =
+        'https://upload.wikimedia.org/wikipedia/th/thumb/5/58/Logo-BDS-bws1.png/300px-Logo-BDS-bws1.png';
+    String bachelorDegree =
+        'https://www.src.ku.ac.th/info/images/LogoKU/KUSRC.png';
+    String degree1 =
+        'https://media.istockphoto.com/id/1307736694/vector/academic-education-icon-on-a-white-background.jpg?s=612x612&w=0&k=20&c=7KiaeOdysggQWjjHVESFJHvCxJdpsb5AOUJtXcoEuUs=';
+    String degree2 =
+        'https://media.istockphoto.com/id/1283581279/th/%E0%B9%80%E0%B8%A7%E0%B8%84%E0%B9%80%E0%B8%95%E0%B8%AD%E0%B8%A3%E0%B9%8C/%E0%B8%AB%E0%B8%A1%E0%B8%A7%E0%B8%81%E0%B8%AA%E0%B9%8D%E0%B8%B2%E0%B9%80%E0%B8%A3%E0%B9%87%E0%B8%88%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%A8%E0%B8%B6%E0%B8%81%E0%B8%A9%E0%B8%B2%E0%B9%81%E0%B8%A5%E0%B8%B0%E0%B9%84%E0%B8%AD%E0%B8%84%E0%B8%AD%E0%B8%99%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%81%E0%B8%B2%E0%B8%A8%E0%B8%99%E0%B8%B5%E0%B8%A2%E0%B8%9A%E0%B8%B1%E0%B8%95%E0%B8%A3.jpg?s=612x612&w=0&k=20&c=wc5XmuaG1wS2P9IV9qqysTv6_eFQZnGX_pT2yD7GM4U=';
+    return Column(
+      children: [
+        Container(
+          margin: EdgeInsets.only(top: 10),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                'My Education ',
+                style: TextStyle(fontSize: 20),
+              ),
+              Icon(
+                Icons.school_outlined,
+                size: 30,
+              ),
+            ],
+          ),
+        ),
+        Container(
+          margin: EdgeInsets.only(top: 15),
+          child: Image.network(
+            secondarySchool,
+            scale: 2.5,
+          ),
+        ),
+        Container(
+          margin: EdgeInsets.only(top: 12),
+          child: Text(
+            'My secondary school is B.D.S stands for Bodindecha (Sing Singhaseni) Samutprakarn. I study in science and mathematics program for 6 year (2012 - 2018)',
+            textAlign: TextAlign.center,
+          ),
+        ),
+        Container(
+          margin: EdgeInsets.only(top: 15),
+          child: Image.network(
+            bachelorDegree,
+            scale: 10,
+          ),
+        ),
+        Container(
+          margin: EdgeInsets.only(top: 12),
+          child: Text(
+            'Bachelor Degree I study in Kasetsart University Sri Racha campus (KU SRC) I study in Bachelor of Science (B. Sc.) and I graduate in April 2022 (2018 - 2022)',
+            textAlign: TextAlign.center,
+          ),
+        ),
+        Divider(
+          color: Colors.black54,
+          indent: 15,
+          endIndent: 15,
+          thickness: 2,
+        ),
+        Container(
+          margin: EdgeInsets.only(top: 10),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                'In The Future ',
+                style: TextStyle(fontSize: 20),
+              ),
+              FaIcon(FontAwesomeIcons.school),
+            ],
+          ),
+        ),
+        Row(
+          children: [
+            Image.network(
+              degree1,
+              scale: 3,
+            ),
+            Image.network(
+              degree2,
+              scale: 5,
+            ),
+          ],
+        ),
+        Text(
+            '''        In the future I want to study in master degree maybe in thai or oversea and if I can graduate in master degree I will continue for Ph.D. I hope the dream come true :).
+        I hope I can make my parent pround of me. I want to be a good guy who can take care of family.'''),
+      ],
+    );
+  }
+
+  tool() {
+    String dartLogo =
+        'https://raw.githubusercontent.com/github/explore/bbd48b997e8d0bef63f676eca4da5e1f76487b56/topics/dart/dart.png';
+    String futterLogo =
+        'https://raw.githubusercontent.com/github/explore/bbd48b997e8d0bef63f676eca4da5e1f76487b56/topics/flutter/flutter.png';
+    String dotnetLogo =
+        'https://raw.githubusercontent.com/github/explore/bbd48b997e8d0bef63f676eca4da5e1f76487b56/topics/dotnet/dotnet.png';
+    String oracleLogo =
+        'https://raw.githubusercontent.com/github/explore/902a8a38f1e277eb27d2a10ab95a3d524a6ea22f/topics/oracle-database/oracle-database.png';
+    String azureLogo =
+        'https://raw.githubusercontent.com/github/explore/bbd48b997e8d0bef63f676eca4da5e1f76487b56/topics/azure/azure.png';
+    return Column(
+      children: [
+        Container(
+          alignment: Alignment.center,
+          margin: EdgeInsets.only(top: 10),
+          child: Text('My tools'),
+        ),
+        Container(
+          margin: EdgeInsets.only(top: 20, left: 20, right: 20, bottom: 20),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Image.network(
+                dartLogo,
+                scale: 2.5,
+              ),
+              Image.network(
+                futterLogo,
+                scale: 2.5,
+              ),
+            ],
+          ),
+        ),
+        Container(
+          alignment: Alignment.center,
+          child: Text(
+            'I use Dart & Futter for Fontend Develop.',
+          ),
+        ),
+        Container(
+          margin: EdgeInsets.only(top: 20, left: 20, right: 20, bottom: 20),
+          child: Image.network(
+            dotnetLogo,
+            scale: 2,
+          ),
+        ),
+        Container(
+          alignment: Alignment.center,
+          child: Text(
+            'DotNet (Core) for Backend Develop.',
+          ),
+        ),
+        Container(
+          margin: EdgeInsets.only(left: 20, right: 20),
+          child: Image.network(
+            oracleLogo,
+            scale: 2,
+          ),
+        ),
+        Container(
+          alignment: Alignment.center,
+          child: Text(
+            'I use Oracle Database for storage.',
+          ),
+        ),
+        Container(
+          margin: EdgeInsets.only(top: 20, left: 20, right: 20, bottom: 20),
+          child: Image.network(
+            azureLogo,
+            scale: 2,
+          ),
+        ),
+        Container(
+          alignment: Alignment.center,
+          child: Text(
+            'Microsoft Azure for cloud server.',
+          ),
+        ),
+        Divider(
+          thickness: 1,
+        ),
+        Container(
+          margin: EdgeInsets.only(top: 10, bottom: 20),
+          child: Text(
+            'I hope I can be expert soon ;)',
+            style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
           ),
         ),
       ],
